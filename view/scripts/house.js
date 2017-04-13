@@ -8,45 +8,45 @@ class House extends React.Component {
     }
 
     handleChange(event) {
-        this.props.onSelectChange(this.props.casa, event.target);
+        this.props.onSelectChange(this.props.house, event.target);
     }
 
     render() {
         const info = this.props.info;
         return (
-            <ul className={`list-unstyled casa ${info.cor}`}>
+            <ul className={`list-unstyled house ${info.color}`}>
                 <li>
-                    <select name="cor" value={info.cor} onChange={this.handleChange}>
+                    <select name="color" value={info.color} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="amarela">Amarela</option>
-                        <option value="azul">Azul</option>
-                        <option value="branca">Branca</option>
-                        <option value="verde">Verde</option>
-                        <option value="vermelha">Vermelha</option>
+                        <option value="yellow">Amarela</option>
+                        <option value="blue">Azul</option>
+                        <option value="white">Branca</option>
+                        <option value="green">Verde</option>
+                        <option value="red">Vermelha</option>
                     </select>
                 </li>
                 <li>
-                    <select name="nacionalidade" value={info.nacionalidade} onChange={this.handleChange}>
+                    <select name="nationality" value={info.nationality} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="alemao">Alemão</option>
-                        <option value="dinamarques">Dinamarquês</option>
-                        <option value="ingles">Inglês</option>
-                        <option value="noruegues">Norueguês</option>
-                        <option value="sueco">Sueco</option>
+                        <option value="german">Alemão</option>
+                        <option value="danish">Dinamarquês</option>
+                        <option value="english">Inglês</option>
+                        <option value="norwegian">Norueguês</option>
+                        <option value="swedish">Sueco</option>
                     </select>
                 </li>
                 <li>
-                    <select name="bebida" value={info.bebida} onChange={this.handleChange}>
+                    <select name="drink" value={info.drink} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="agua">Água</option>
-                        <option value="cafe">Café</option>
-                        <option value="cerveja">Cerveja</option>
-                        <option value="cha">Chá</option>
-                        <option value="leite">Leite</option>
+                        <option value="water">Água</option>
+                        <option value="coffee">Café</option>
+                        <option value="beer">Cerveja</option>
+                        <option value="tea">Chá</option>
+                        <option value="milk">Leite</option>
                     </select>
                 </li>
                 <li>
-                    <select name="cigarro" value={info.cigarro} onChange={this.handleChange}>
+                    <select name="cigarrete" value={info.cigarrete} onChange={this.handleChange}>
                         <option value="null"></option>
                         <option value="blends">Blends</option>
                         <option value="bluemaster">Bluemaster</option>
@@ -56,13 +56,13 @@ class House extends React.Component {
                     </select>
                 </li>
                 <li>
-                    <select name="animal" value={info.animal} onChange={this.handleChange}>
+                    <select name="pet" value={info.pet} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="cachorros">Cachorros</option>
-                        <option value="cavalos">Cavalos</option>
-                        <option value="gatos">Gatos</option>
-                        <option value="passaros">Pássaros</option>
-                        <option value="peixes">Peixes</option>
+                        <option value="dog">Cachorros</option>
+                        <option value="horse">Cavalos</option>
+                        <option value="cat">Gatos</option>
+                        <option value="bird">Pássaros</option>
+                        <option value="fish">Peixes</option>
                     </select>
                 </li>
             </ul>

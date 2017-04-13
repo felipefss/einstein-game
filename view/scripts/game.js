@@ -10,26 +10,26 @@ class Game extends React.Component {
 		this.state = {};
 
 		for (let i = 0; i < 5; i++) {
-			this.state[`casa${i}`] = {
-				cor: 'null',
-				nacionalidade: 'null',
-				bebida: 'null',
-				cigarro: 'null',
-				animal: 'null'
+			this.state[`house${i}`] = {
+				color: 'null',
+				nationality: 'null',
+				drink: 'null',
+				cigarrete: 'null',
+				pet: 'null'
 			};
 		}
 	}
 
-	handleChange(casa, item) {
-		const storedItem = JSON.parse(JSON.stringify(this.state[`casa${casa}`]));
+	handleChange(house, item) {
+		const storedItem = JSON.parse(JSON.stringify(this.state[`house${house}`]));
 		storedItem[item.name] = item.value;
 		this.setState({
-			[`casa${casa}`]: storedItem
+			[`house${house}`]: storedItem
 		});
 	}
 
 	render() {
-		const casas = this.state;
+		const houses = this.state;
 		return (
 			<div className="text-center">
 				<ul className="list-inline">
@@ -46,36 +46,36 @@ class Game extends React.Component {
 					<li className="text-center">
 						<span><strong>Casa 1</strong></span>
 						<House
-							casa={0}
-							info={casas['casa0']}
+							house={0}
+							info={houses['house0']}
 							onSelectChange={this.handleChange} />
 					</li>
 					<li className="text-center">
 						<span><strong>Casa 2</strong></span>
 						<House
-							casa={1}
-							info={casas['casa1']}
+							house={1}
+							info={houses['house1']}
 							onSelectChange={this.handleChange} />
 					</li>
 					<li className="text-center">
 						<span><strong>Casa 3</strong></span>
 						<House
-							casa={2}
-							info={casas['casa2']}
+							house={2}
+							info={houses['house2']}
 							onSelectChange={this.handleChange} />
 					</li>
 					<li className="text-center">
 						<span><strong>Casa 4</strong></span>
 						<House
-							casa={3}
-							info={casas['casa3']}
+							house={3}
+							info={houses['house3']}
 							onSelectChange={this.handleChange} />
 					</li>
 					<li className="text-center">
 						<span><strong>Casa 5</strong></span>
 						<House
-							casa={4}
-							info={casas['casa4']}
+							house={4}
+							info={houses['house4']}
 							onSelectChange={this.handleChange} />
 					</li>
 				</ul>
