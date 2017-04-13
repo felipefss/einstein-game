@@ -12,9 +12,11 @@ let win;
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        width: 900, 
+        width: 925, 
         height: 600,
-        minWidth: 900,
+        minWidth: 925,
+        minHeight: 600,
+        backgroundColor: '#BACFF2',
         resizable: true
     });
 
@@ -36,6 +38,7 @@ function createWindow() {
         win = null
     });
 
+    //Fazer multi linguas com opcao de escolha no menu
     // menu(app.getLocale());
 }
 

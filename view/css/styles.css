@@ -2,14 +2,15 @@
 	box-sizing: border-box;
 }
 
-li {
-	margin: 10px 0;
+body {
+	background: #BACFF2;
 }
 
 #root {
 	margin: 10px;
 }
 
+/* MAIN */
 select {
 	width: 100%;
 }
@@ -17,6 +18,10 @@ select {
 .house {
 	padding: 5px 10px;
 	border: 1px solid black;
+}
+
+li {
+	margin: 10px 0;
 }
 
 .null {
@@ -42,3 +47,19 @@ select {
 .red {
 	background: red;
 }
+/* MAIN END */
+
+
+/* HINTS */
+#hints {
+	font-size: 1.1em;
+}
+
+#hints > h3 {
+	color: #00008b;
+}
+
+#hints li {
+	margin: 0;
+}
+/* HINTS END */

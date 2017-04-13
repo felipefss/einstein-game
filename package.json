@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron ."
+    "start": "./node_modules/.bin/electron .",
+    "devtools": "react-devtools"
   },
   "author": "Felipe Santos",
   "license": "MIT",
@@ -14,5 +15,8 @@
     "electron": "^1.6.2",
     "react": "^15.5.3",
     "react-dom": "^15.5.3"
+  },
+  "devDependencies": {
+    "react-devtools": "^2.0.12"
   }
 }
