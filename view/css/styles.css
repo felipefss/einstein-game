@@ -1,0 +1,44 @@
+* {
+	box-sizing: border-box;
+}
+
+li {
+	margin: 10px 0;
+}
+
+#root {
+	margin: 10px;
+}
+
+select {
+	width: 100%;
+}
+
+.casa {
+	padding: 5px 10px;
+	border: 1px solid black;
+}
+
+.null {
+	background: #eee;
+}
+
+.amarela {
+	background: yellow;
+}
+
+.azul {
+	background: blue;
+}
+
+.branca {
+	background: white;
+}
+
+.verde {
+	background: green;
+}
+
+.vermelha {
+	background: red;
+}
