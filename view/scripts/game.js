@@ -1,14 +1,52 @@
 // import 'react-devtools';
 import React from 'react';
 import ReactDOM from 'react-dom';
+const { remote } = require('electron');
 
+const { dialog } = remote;
 const House = require('./house');
 const Hints = require('./hints');
+const { Menu, MenuItem } = remote;
+
+//MENU
+const template = {
+	label: 'Jogo',
+	submenu: [
+		{
+			label: 'Novo Jogo',
+			accelerator: 'Ctrl+N',
+			click() {
+				Game.newGame();
+			}
+		},
+		{
+			role: 'quit'
+		}
+	]
+};
+
+const menu = new Menu();
+menu.append(new MenuItem(template));
+menu.append(new MenuItem({ label: 'Regras', click() { showRules() } }));
+Menu.setApplicationMenu(menu);
+
+const showRules = () => {
+	const rules = `1. Há 5 casas de diferentes cores
+2. Em cada casa mora uma pessoa de uma diferente nacionalidade
+3. Nenhum deles tem o mesmo animal, fuma o mesmo cigarro ou bebe a mesma bebida`;
+
+	dialog.showMessageBox(remote.getCurrentWindow(), {
+		type: 'none',
+		title: 'Regras',
+		message: rules
+	}, (response) => { });
+};
 
 class Game extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleChange = this.handleChange.bind(this);
+		Game.newGame = Game.newGame.bind(this);
 		this.state = {};
 
 		for (let i = 0; i < 5; i++) {
@@ -19,6 +57,21 @@ class Game extends React.Component {
 				cigarrete: 'null',
 				pet: 'null'
 			};
+		}
+	}
+
+	static newGame() {
+		for (let i = 0; i < 5; i++) {
+			const state = {};
+			state[`house${i}`] = {
+				color: 'null',
+				nationality: 'null',
+				drink: 'null',
+				cigarrete: 'null',
+				pet: 'null'
+			};
+
+			this.setState(state);
 		}
 	}
 
@@ -92,6 +145,8 @@ class Game extends React.Component {
 		);
 	}
 }
+
+showRules();
 
 ReactDOM.render(
 	<Game />,

@@ -1,7 +1,6 @@
 'use strict';
 
-const { app, BrowserWindow } = require('electron');
-const menu = require('./res/menu');
+const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -12,12 +11,12 @@ let win;
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        width: 925, 
+        width: 925,
         height: 600,
         minWidth: 925,
         minHeight: 600,
         backgroundColor: '#BACFF2',
-        resizable: true
+        resizable: false
     });
 
     // and load the index.html of the app.
@@ -39,7 +38,8 @@ function createWindow() {
     });
 
     //Fazer multi linguas com opcao de escolha no menu
-    // menu(app.getLocale());
+    const menu = Menu.buildFromTemplate([]);
+    Menu.setApplicationMenu(menu);
 }
 
 // This method will be called when Electron has finished
