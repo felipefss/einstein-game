@@ -13,56 +13,57 @@ class House extends React.Component {
 
     render() {
         const info = this.props.info;
+        const text = this.props.text;
         return (
             <ul className={`list-unstyled house ${info.color}`}>
                 <li>
                     <select name="color" value={info.color} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="yellow">Amarela</option>
-                        <option value="blue">Azul</option>
-                        <option value="white">Branca</option>
-                        <option value="green">Verde</option>
-                        <option value="red">Vermelha</option>
+                        <option value="yellow">{text.color.yellow}</option>
+                        <option value="blue">{text.color.blue}</option>
+                        <option value="white">{text.color.white}</option>
+                        <option value="green">{text.color.green}</option>
+                        <option value="red">{text.color.red}</option>
                     </select>
                 </li>
                 <li>
                     <select name="nationality" value={info.nationality} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="german">Alemão</option>
-                        <option value="danish">Dinamarquês</option>
-                        <option value="english">Inglês</option>
-                        <option value="norwegian">Norueguês</option>
-                        <option value="swedish">Sueco</option>
+                        <option value="german">{text.nationality.german}</option>
+                        <option value="danish">{text.nationality.danish}</option>
+                        <option value="english">{text.nationality.english}</option>
+                        <option value="norwegian">{text.nationality.norwegian}</option>
+                        <option value="swedish">{text.nationality.swedish}</option>
                     </select>
                 </li>
                 <li>
                     <select name="drink" value={info.drink} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="water">Água</option>
-                        <option value="coffee">Café</option>
-                        <option value="beer">Cerveja</option>
-                        <option value="tea">Chá</option>
-                        <option value="milk">Leite</option>
+                        <option value="water">{text.drink.water}</option>
+                        <option value="coffee">{text.drink.coffee}</option>
+                        <option value="beer">{text.drink.beer}</option>
+                        <option value="tea">{text.drink.tea}</option>
+                        <option value="milk">{text.drink.milk}</option>
                     </select>
                 </li>
                 <li>
                     <select name="cigarrete" value={info.cigarrete} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="blends">Blends</option>
-                        <option value="bluemaster">Bluemaster</option>
-                        <option value="dunhill">Dunhill</option>
-                        <option value="pallmall">Pall Mall</option>
-                        <option value="prince">Prince</option>
+                        <option value="blends">{text.cigarrete.blends}</option>
+                        <option value="bluemaster">{text.cigarrete.bluemaster}</option>
+                        <option value="dunhill">{text.cigarrete.dunhill}</option>
+                        <option value="pallmall">{text.cigarrete.pallmall}</option>
+                        <option value="prince">{text.cigarrete.prince}</option>
                     </select>
                 </li>
                 <li>
                     <select name="pet" value={info.pet} onChange={this.handleChange}>
                         <option value="null"></option>
-                        <option value="dog">Cachorros</option>
-                        <option value="horse">Cavalos</option>
-                        <option value="cat">Gatos</option>
-                        <option value="bird">Pássaros</option>
-                        <option value="fish">Peixes</option>
+                        <option value="dog">{text.pet.dog}</option>
+                        <option value="horse">{text.pet.horse}</option>
+                        <option value="cat">{text.pet.cat}</option>
+                        <option value="bird">{text.pet.bird}</option>
+                        <option value="fish">{text.pet.fish}</option>
                     </select>
                 </li>
             </ul>
