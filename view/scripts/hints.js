@@ -2,7 +2,7 @@ import React from 'react';
 
 const { remote } = require('electron');
 const { dialog } = remote;
-const list = require('./hintsList');
+const List = require('./hintsList');
 
 const houseQuery = (houses, ...queries) => {
 	let condition = [];
@@ -26,21 +26,24 @@ const Hints = (props) => {
 	let hintList2;
 
 	const checkEnd = () => {
-		const isGameFinish = list.every((item) => item.check);
+		const isGameFinish = List(props.locale).every((item) => item.check);
 
 		if (isGameFinish) {
 			dialog.showMessageBox(remote.getCurrentWindow(), {
-				title: 'Fim de jogo',
-				message: 'Parabéns! Você decifrou tudo!\nPara começar de novo, selecione no menu ou pressione CTRL + N'
+				title: props.text.gameOverTitle,
+				message: props.text.gameOverMessage
 			});
 		}
 	};
 
 	const updateThings = () => {
-		const hintList = list.map((hint, index) =>
+		const hintList = List(props.locale).map((hint, index) =>
 			<li key={index}>
 				<label>
-					<input type="checkbox" checked={list[index].check} onClick={(e) => e.preventDefault()} />{hint.hint}
+					<input
+						type="checkbox"
+						checked={List(props.locale)[index].check}
+						onClick={(e) => e.preventDefault()} />{hint.hint}
 				</label>
 			</li>
 		);
@@ -50,6 +53,8 @@ const Hints = (props) => {
 	};
 
 	const checkResult = (houses) => {
+		const list = List(props.locale);
+
 		list[0].check = houses['house0'].nationality === 'norwegian';
 		list[1].check = houseQuery(
 			houses,
